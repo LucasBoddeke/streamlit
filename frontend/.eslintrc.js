@@ -262,10 +262,7 @@ module.exports = {
         project: [path.resolve(".", "tsconfig.json")],
       },
       alias: {
-        map: [
-          ["@streamlit/lib/src", path.resolve(".", "src")],
-          ["@streamlit/lib", path.resolve(".", "src")],
-        ],
+        map: [["@streamlit/lib", path.resolve(".", "src")]],
 
         extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
       },
