@@ -24,7 +24,7 @@ import { WidgetStateManager } from "~lib/WidgetStateManager"
 import {
   LabelVisibilityMessage as LabelVisibilityMessageProto,
   MultiSelect as MultiSelectProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import * as Utils from "~lib/theme/utils"
 import { mockConvertRemToPx } from "~lib/mocks/mocks"
 

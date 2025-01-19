@@ -20,7 +20,7 @@ import { screen } from "@testing-library/react"
 import { userEvent } from "@testing-library/user-event"
 
 import { render } from "~lib/test_util"
-import { Text as TextProto } from "~lib/proto"
+import { Text as TextProto } from "@streamlit/protobuf"
 
 import TextElement, { TextProps } from "./TextElement"
 

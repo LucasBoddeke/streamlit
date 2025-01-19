@@ -34,7 +34,7 @@ import {
   ObjectColumn,
 } from "~lib/components/widgets/DataFrame/columns"
 import { Quiver } from "~lib/dataframes/Quiver"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 import { EmotionTheme } from "~lib/theme"
 import { logError, logWarning } from "~lib/util/log"
 import { isNullOrUndefined, notNullOrUndefined } from "~lib/util/utils"

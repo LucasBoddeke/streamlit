@@ -27,7 +27,7 @@ import {
   IFileURLs,
   LabelVisibilityMessage as LabelVisibilityMessageProto,
   UploadedFileInfo as UploadedFileInfoProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 
 import FileUploader, { Props } from "./FileUploader"

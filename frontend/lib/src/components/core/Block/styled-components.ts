@@ -19,7 +19,7 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import { StyledCheckbox } from "~lib/components/widgets/Checkbox/styled-components"
-import { Block as BlockProto } from "~lib/proto"
+import { Block as BlockProto } from "@streamlit/protobuf"
 import { EmotionTheme, STALE_STYLES } from "~lib/theme"
 
 function translateGapWidth(gap: string, theme: EmotionTheme): string {

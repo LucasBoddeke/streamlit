@@ -23,7 +23,7 @@ import {
   DEFAULT_IFRAME_FEATURE_POLICY,
   DEFAULT_IFRAME_SANDBOX_POLICY,
 } from "~lib/util/IFrameUtil"
-import { IFrame as IFrameProto } from "~lib/proto"
+import { IFrame as IFrameProto } from "@streamlit/protobuf"
 
 import IFrame, { IFrameProps } from "./IFrame"
 

@@ -22,7 +22,7 @@ import {
   FileUploaderState as FileUploaderStateProto,
   IFileURLs,
   UploadedFileInfo as UploadedFileInfoProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { ensureError } from "~lib/util/ErrorHandling"
 
 type SuccessfulUpload = {

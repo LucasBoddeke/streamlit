@@ -16,7 +16,7 @@
 
 import { isNullOrUndefined, notNullOrUndefined } from "~lib/util/utils"
 
-import { ForwardMsg } from "./proto"
+import { ForwardMsg } from "@streamlit/protobuf"
 import { logMessage } from "./util/log"
 import { ensureError } from "./util/ErrorHandling"
 import { StreamlitEndpoints } from "./StreamlitEndpoints"

@@ -23,7 +23,7 @@ import { parseToRgba } from "color2k"
 
 import { useStWidthHeight } from "~lib/hooks/useStWidthHeight"
 import { EmotionTheme } from "~lib/theme"
-import { DeckGlJsonChart as DeckGlJsonChartProto } from "~lib/proto"
+import { DeckGlJsonChart as DeckGlJsonChartProto } from "@streamlit/protobuf"
 import {
   useBasicWidgetClientState,
   ValueWithSource,

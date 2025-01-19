@@ -23,7 +23,7 @@ import { mockTheme } from "~lib/mocks/mockTheme"
 import {
   LabelVisibilityMessage as LabelVisibilityMessageProto,
   Metric as MetricProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 
 import Metric, { MetricProps } from "./Metric"
 

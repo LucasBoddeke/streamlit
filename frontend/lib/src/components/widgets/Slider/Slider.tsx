@@ -34,7 +34,7 @@ import {
   useBasicWidgetState,
   ValueWithSource,
 } from "~lib/hooks/useBasicWidgetState"
-import { Slider as SliderProto } from "~lib/proto"
+import { Slider as SliderProto } from "@streamlit/protobuf"
 import { debounce, labelVisibilityProtoValueToEnum } from "~lib/util/utils"
 import {
   StyledWidgetLabelHelp,

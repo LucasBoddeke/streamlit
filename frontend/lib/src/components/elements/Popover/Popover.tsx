@@ -22,7 +22,7 @@ import { PLACEMENT, TRIGGER_TYPE, Popover as UIPopover } from "baseui/popover"
 
 import { hasLightBackgroundColor } from "~lib/theme"
 import { StyledIcon } from "~lib/components/shared/Icon"
-import { Block as BlockProto } from "~lib/proto"
+import { Block as BlockProto } from "@streamlit/protobuf"
 import BaseButton, {
   BaseButtonKind,
   BaseButtonSize,

@@ -35,7 +35,7 @@ import { EmotionTheme } from "~lib/theme"
 import {
   ButtonGroup as ButtonGroupProto,
   LabelVisibilityMessage,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 import {
   StyledWidgetLabelHelpInline,

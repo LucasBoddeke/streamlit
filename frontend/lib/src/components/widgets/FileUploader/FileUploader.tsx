@@ -31,7 +31,7 @@ import {
   FileURLs as FileURLsProto,
   IFileURLs,
   UploadedFileInfo as UploadedFileInfoProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { FormClearHelper } from "~lib/components/widgets/Form"
 import { FileSize, getSizeDisplay, sizeConverter } from "~lib/util/FileHelper"
 import { FileUploadClient } from "~lib/FileUploadClient"

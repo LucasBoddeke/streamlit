@@ -16,7 +16,7 @@
 
 import { Mock } from "vitest"
 
-import { ForwardMsg } from "./proto"
+import { ForwardMsg } from "@streamlit/protobuf"
 import { ForwardMsgCache } from "./ForwardMessageCache"
 
 interface MockCache {

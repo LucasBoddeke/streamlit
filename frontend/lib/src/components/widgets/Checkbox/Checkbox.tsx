@@ -25,7 +25,7 @@ import {
 import { transparentize } from "color2k"
 
 import { labelVisibilityProtoValueToEnum } from "~lib/util/utils"
-import { Checkbox as CheckboxProto } from "~lib/proto"
+import { Checkbox as CheckboxProto } from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 import {
   useBasicWidgetState,

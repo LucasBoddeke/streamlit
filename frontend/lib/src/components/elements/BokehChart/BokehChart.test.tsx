@@ -19,7 +19,7 @@ import React from "react"
 import { screen } from "@testing-library/react"
 
 import { render } from "~lib/test_util"
-import { BokehChart as BokehChartProto } from "~lib/proto"
+import { BokehChart as BokehChartProto } from "@streamlit/protobuf"
 import Bokeh from "~lib/vendor/bokeh/bokeh.esm"
 
 import { BokehChart, BokehChartProps } from "./BokehChart"

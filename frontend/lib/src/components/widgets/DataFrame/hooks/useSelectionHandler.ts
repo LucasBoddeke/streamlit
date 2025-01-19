@@ -20,7 +20,7 @@ import { CompactSelection, GridSelection } from "@glideapps/glide-data-grid"
 import isEqual from "lodash/isEqual"
 
 import { BaseColumn } from "~lib/components/widgets/DataFrame/columns"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 
 export type SelectionHandlerReturn = {
   // The current selection state

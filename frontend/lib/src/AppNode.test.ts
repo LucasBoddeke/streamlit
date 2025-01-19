@@ -29,7 +29,7 @@ import {
   ForwardMsgMetadata,
   IArrowVegaLiteChart,
   Logo as LogoProto,
-} from "./proto"
+} from "@streamlit/protobuf"
 
 const NO_SCRIPT_RUN_ID = "NO_SCRIPT_RUN_ID"
 const FAKE_SCRIPT_HASH = "fake_script_hash"

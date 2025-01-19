@@ -36,7 +36,7 @@ import {
   WidgetLabel,
 } from "~lib/components/widgets/BaseWidget"
 import { StyledUISelect } from "~lib/components/widgets/Multiselect/styled-components"
-import { MultiSelect as MultiSelectProto } from "~lib/proto"
+import { MultiSelect as MultiSelectProto } from "@streamlit/protobuf"
 import { EmotionTheme } from "~lib/theme"
 import { labelVisibilityProtoValueToEnum } from "~lib/util/utils"
 import { WidgetStateManager } from "~lib/WidgetStateManager"

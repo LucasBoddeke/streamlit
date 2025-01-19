@@ -16,7 +16,7 @@
 
 import { MockInstance } from "vitest"
 
-import { CustomThemeConfig } from "~lib/proto"
+import { CustomThemeConfig } from "@streamlit/protobuf"
 import {
   baseTheme,
   createAutoTheme,

@@ -22,7 +22,7 @@ import { act, fireEvent, screen } from "@testing-library/react"
 import {
   ComponentInstance as ComponentInstanceProto,
   SpecialArg,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import {
   DEFAULT_IFRAME_FEATURE_POLICY,
   DEFAULT_IFRAME_SANDBOX_POLICY,

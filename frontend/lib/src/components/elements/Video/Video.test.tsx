@@ -19,7 +19,7 @@ import React from "react"
 import { screen } from "@testing-library/react"
 
 import { render } from "~lib/test_util"
-import { Video as VideoProto } from "~lib/proto"
+import { Video as VideoProto } from "@streamlit/protobuf"
 import { mockEndpoints } from "~lib/mocks/mocks"
 import { WidgetStateManager as ElementStateManager } from "~lib/WidgetStateManager"
 

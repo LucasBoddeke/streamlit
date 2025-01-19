@@ -21,7 +21,7 @@ import { userEvent } from "@testing-library/user-event"
 
 import { customRenderLibContext, render } from "~lib/test_util"
 import IsSidebarContext from "~lib/components/core/IsSidebarContext"
-import { PageLink as PageLinkProto } from "~lib/proto"
+import { PageLink as PageLinkProto } from "@streamlit/protobuf"
 
 import PageLink, { Props } from "./PageLink"
 

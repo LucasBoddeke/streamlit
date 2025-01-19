@@ -23,7 +23,7 @@ import {
   Balloons as BalloonsProto,
   ForwardMsgMetadata,
   Snow as SnowProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { ElementNode } from "~lib/AppNode"
 import { ScriptRunState } from "~lib/ScriptRunState"
 import { createFormsData, WidgetStateManager } from "~lib/WidgetStateManager"

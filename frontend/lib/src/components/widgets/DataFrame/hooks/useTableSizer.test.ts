@@ -17,7 +17,7 @@
 import { act, renderHook } from "@testing-library/react-hooks"
 
 import { TEN_BY_TEN, UNICODE, VERY_TALL } from "~lib/mocks/arrow"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 
 import { CustomGridTheme } from "./useCustomTheme"
 import useTableSizer from "./useTableSizer"

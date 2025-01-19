@@ -19,7 +19,7 @@ import React from "react"
 import { screen } from "@testing-library/react"
 
 import { render } from "~lib/test_util"
-import { Html as HtmlProto } from "~lib/proto"
+import { Html as HtmlProto } from "@streamlit/protobuf"
 
 import Html, { HtmlProps } from "./Html"
 

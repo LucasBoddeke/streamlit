@@ -2657,6 +2657,7 @@ __metadata:
     "@loaders.gl/core": "npm:^4.2.5"
     "@loaders.gl/csv": "npm:^4.2.5"
     "@loaders.gl/gltf": "npm:^4.2.5"
+    "@streamlit/protobuf": "workspace:^"
     "@swc/plugin-emotion": "npm:^3.0.9"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^14.1.2"
@@ -2718,7 +2719,6 @@ __metadata:
     postinstall-postinstall: "npm:^2.1.0"
     prettier: "npm:^2.8.3"
     protobufjs: "npm:^7.2.5"
-    protobufjs-cli: "npm:^1.1.0"
     query-string: "npm:^8.1.0"
     re-resizable: "npm:^6.10.1"
     react-color: "npm:^2.18.1"
@@ -2765,6 +2765,14 @@ __metadata:
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
     react-dom: ^17.0.0 || ^18.0.0
+  languageName: unknown
+  linkType: soft
+
+"@streamlit/protobuf@workspace:^, @streamlit/protobuf@workspace:protobuf":
+  version: 0.0.0-use.local
+  resolution: "@streamlit/protobuf@workspace:protobuf"
+  dependencies:
+    protobufjs-cli: "npm:^1.1.0"
   languageName: unknown
   linkType: soft
 

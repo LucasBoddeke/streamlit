@@ -21,7 +21,7 @@ import {
   ComponentInstance as ComponentInstanceProto,
   ISpecialArg,
   SpecialArg as SpecialArgProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { EmotionTheme, toExportedTheme } from "~lib/theme"
 import { Source, WidgetStateManager } from "~lib/WidgetStateManager"
 

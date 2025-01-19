@@ -19,7 +19,7 @@ import React, { ReactElement } from "react"
 import { notNullOrUndefined } from "~lib/util/utils"
 import AlertContainer, { Kind } from "~lib/components/shared/AlertContainer"
 import StreamlitMarkdown from "~lib/components/shared/StreamlitMarkdown"
-import { Exception as ExceptionProto } from "~lib/proto"
+import { Exception as ExceptionProto } from "@streamlit/protobuf"
 import { StyledCode } from "~lib/components/elements/CodeBlock/styled-components"
 import { StyledStackTrace } from "~lib/components/shared/ErrorElement/styled-components"
 

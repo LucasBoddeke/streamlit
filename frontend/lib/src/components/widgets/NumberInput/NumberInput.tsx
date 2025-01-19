@@ -36,7 +36,7 @@ import {
 } from "~lib/util/utils"
 import { useFormClearHelper } from "~lib/components/widgets/Form"
 import { logWarning } from "~lib/util/log"
-import { NumberInput as NumberInputProto } from "~lib/proto"
+import { NumberInput as NumberInputProto } from "@streamlit/protobuf"
 import { Source, WidgetStateManager } from "~lib/WidgetStateManager"
 import TooltipIcon from "~lib/components/shared/TooltipIcon"
 import { Placement } from "~lib/components/shared/Tooltip"

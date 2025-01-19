@@ -29,7 +29,7 @@ import EditingState from "~lib/components/widgets/DataFrame/EditingState"
 import { DataFrameCellType } from "~lib/dataframes/arrowTypeUtils"
 import { Quiver } from "~lib/dataframes/Quiver"
 import { MULTI, UNICODE } from "~lib/mocks/arrow"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 
 import useDataLoader from "./useDataLoader"
 

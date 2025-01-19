@@ -20,7 +20,7 @@ import { act, fireEvent, screen } from "@testing-library/react"
 import { userEvent } from "@testing-library/user-event"
 
 import { render } from "~lib/test_util"
-import { ColorPicker as ColorPickerProto } from "~lib/proto"
+import { ColorPicker as ColorPickerProto } from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 
 import ColorPicker, { Props } from "./ColorPicker"

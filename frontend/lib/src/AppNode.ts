@@ -37,7 +37,7 @@ import {
   IArrow,
   IArrowNamedDataSet,
   Logo,
-} from "./proto"
+} from "@streamlit/protobuf"
 import {
   VegaLiteChartElement,
   WrappedNamedDataset,

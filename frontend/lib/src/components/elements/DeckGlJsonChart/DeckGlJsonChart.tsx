@@ -26,7 +26,7 @@ import { useTheme } from "@emotion/react"
 import { Close } from "@emotion-icons/material-outlined"
 
 import { EmotionTheme, hasLightBackgroundColor } from "~lib/theme"
-import { DeckGlJsonChart as DeckGlJsonChartProto } from "~lib/proto"
+import { DeckGlJsonChart as DeckGlJsonChartProto } from "@streamlit/protobuf"
 import { assertNever } from "~lib/util/assertNever"
 import Toolbar, { ToolbarAction } from "~lib/components/shared/Toolbar"
 import { useRequiredContext } from "~lib/hooks/useRequiredContext"

@@ -22,7 +22,7 @@ import { mockTheme } from "~lib/mocks/mockTheme"
 import {
   ArrowDataframe,
   ComponentInstance as ComponentInstanceProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 
 import {

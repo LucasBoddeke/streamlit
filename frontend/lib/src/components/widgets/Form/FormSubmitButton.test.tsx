@@ -20,7 +20,7 @@ import { userEvent } from "@testing-library/user-event"
 import { enableAllPlugins } from "immer"
 
 import { render } from "~lib/test_util"
-import { Button as ButtonProto } from "~lib/proto"
+import { Button as ButtonProto } from "@streamlit/protobuf"
 import {
   createFormsData,
   FormsData,

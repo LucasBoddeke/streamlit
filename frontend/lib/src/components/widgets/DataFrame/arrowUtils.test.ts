@@ -43,7 +43,7 @@ import {
   STYLER,
   UNICODE,
 } from "~lib/mocks/arrow"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 
 import {
   applyPandasStylerCss,

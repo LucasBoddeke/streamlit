@@ -30,7 +30,7 @@ import {
 import { DataFrameCellType } from "~lib/dataframes/arrowTypeUtils"
 import { Quiver } from "~lib/dataframes/Quiver"
 import { UNICODE } from "~lib/mocks/arrow"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 
 import useColumnLoader, {
   applyColumnConfig,

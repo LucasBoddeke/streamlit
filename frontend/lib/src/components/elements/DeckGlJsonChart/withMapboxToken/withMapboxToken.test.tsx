@@ -20,7 +20,7 @@ import axios from "axios"
 import { screen, waitFor } from "@testing-library/react"
 
 import { customRenderLibContext, render } from "~lib/test_util"
-import { DeckGlJsonChart as DeckGlJsonChartProto } from "~lib/proto"
+import { DeckGlJsonChart as DeckGlJsonChartProto } from "@streamlit/protobuf"
 
 import withMapboxToken, {
   MapboxTokenFetchingError,

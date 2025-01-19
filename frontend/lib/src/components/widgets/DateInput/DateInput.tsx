@@ -32,7 +32,7 @@ import {
   isNullOrUndefined,
   labelVisibilityProtoValueToEnum,
 } from "~lib/util/utils"
-import { DateInput as DateInputProto } from "~lib/proto"
+import { DateInput as DateInputProto } from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 import {
   useBasicWidgetState,

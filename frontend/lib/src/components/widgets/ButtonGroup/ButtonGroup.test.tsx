@@ -24,7 +24,7 @@ import { WidgetStateManager } from "~lib/WidgetStateManager"
 import {
   ButtonGroup as ButtonGroupProto,
   LabelVisibilityMessage as LabelVisibilityMessageProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import {
   BaseButtonKind,
   BaseButtonSize,

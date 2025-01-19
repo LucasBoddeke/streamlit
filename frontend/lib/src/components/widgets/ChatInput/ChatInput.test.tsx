@@ -20,7 +20,7 @@ import { fireEvent, screen } from "@testing-library/react"
 import { userEvent } from "@testing-library/user-event"
 
 import { render } from "~lib/test_util"
-import { ChatInput as ChatInputProto } from "~lib/proto"
+import { ChatInput as ChatInputProto } from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 
 import ChatInput, { Props } from "./ChatInput"

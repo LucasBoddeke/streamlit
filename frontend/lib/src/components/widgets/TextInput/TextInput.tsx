@@ -21,7 +21,7 @@ import { Input as UIInput } from "baseui/input"
 import { useTheme } from "@emotion/react"
 
 import useOnInputChange from "~lib/hooks/useOnInputChange"
-import { TextInput as TextInputProto } from "~lib/proto"
+import { TextInput as TextInputProto } from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 import {
   useBasicWidgetState,

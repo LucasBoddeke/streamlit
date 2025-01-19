@@ -17,7 +17,7 @@
 import React, { ReactElement, useEffect, useState } from "react"
 
 import Modal, { ModalBody, ModalHeader } from "~lib/components/shared/Modal"
-import { Block as BlockProto } from "~lib/proto"
+import { Block as BlockProto } from "@streamlit/protobuf"
 import IsDialogContext from "~lib/components/core/IsDialogContext"
 import { notNullOrUndefined } from "~lib/util/utils"
 

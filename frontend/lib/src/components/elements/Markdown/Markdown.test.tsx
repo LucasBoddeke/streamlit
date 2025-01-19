@@ -20,7 +20,7 @@ import { screen } from "@testing-library/react"
 import { userEvent } from "@testing-library/user-event"
 
 import { render } from "~lib/test_util"
-import { Markdown as MarkdownProto } from "~lib/proto"
+import { Markdown as MarkdownProto } from "@streamlit/protobuf"
 
 import Markdown, { MarkdownProps } from "./Markdown"
 

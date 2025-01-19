@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-import { IAppPage, ICustomThemeConfig, MetricsEvent } from "~lib/proto"
+import {
+  IAppPage,
+  ICustomThemeConfig,
+  MetricsEvent,
+} from "@streamlit/protobuf"
 import { ExportedTheme } from "~lib/theme"
 import { ScriptRunState } from "~lib/ScriptRunState"
 import { LibConfig } from "~lib/components/core/LibContext"

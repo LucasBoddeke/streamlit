@@ -20,7 +20,7 @@ import { screen } from "@testing-library/react"
 
 import { mockEndpoints } from "~lib/mocks/mocks"
 import { render } from "~lib/test_util"
-import { Block as BlockProto } from "~lib/proto"
+import { Block as BlockProto } from "@streamlit/protobuf"
 
 import ChatMessage, { ChatMessageProps } from "./ChatMessage"
 

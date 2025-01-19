@@ -21,7 +21,7 @@ import { PLACEMENT, ToasterContainer } from "baseui/toast"
 import { userEvent } from "@testing-library/user-event"
 
 import { render } from "~lib/test_util"
-import { Toast as ToastProto } from "~lib/proto"
+import { Toast as ToastProto } from "@streamlit/protobuf"
 import { EmotionTheme } from "~lib/theme"
 import { mockTheme } from "~lib/mocks/mockTheme"
 

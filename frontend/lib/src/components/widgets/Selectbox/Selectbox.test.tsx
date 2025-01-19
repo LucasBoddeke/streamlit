@@ -21,7 +21,7 @@ import { userEvent } from "@testing-library/user-event"
 
 import { render } from "~lib/test_util"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
-import { Selectbox as SelectboxProto } from "~lib/proto"
+import { Selectbox as SelectboxProto } from "@streamlit/protobuf"
 import * as Utils from "~lib/theme/utils"
 import { mockConvertRemToPx } from "~lib/mocks/mocks"
 

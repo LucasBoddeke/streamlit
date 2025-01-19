@@ -19,7 +19,7 @@ import React from "react"
 import { screen } from "@testing-library/react"
 
 import { render } from "~lib/test_util"
-import { ImageList as ImageListProto } from "~lib/proto"
+import { ImageList as ImageListProto } from "@streamlit/protobuf"
 import { mockEndpoints } from "~lib/mocks/mocks"
 
 import ImageList, { ImageListProps } from "./ImageList"

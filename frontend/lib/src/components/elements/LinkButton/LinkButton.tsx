@@ -16,7 +16,7 @@
 
 import React, { MouseEvent, ReactElement } from "react"
 
-import { LinkButton as LinkButtonProto } from "~lib/proto"
+import { LinkButton as LinkButtonProto } from "@streamlit/protobuf"
 import {
   BaseButtonKind,
   BaseButtonSize,

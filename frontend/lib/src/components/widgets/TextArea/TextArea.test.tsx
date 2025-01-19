@@ -23,7 +23,7 @@ import { render } from "~lib/test_util"
 import {
   LabelVisibilityMessage as LabelVisibilityMessageProto,
   TextArea as TextAreaProto,
-} from "~lib/proto"
+} from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 
 import TextArea, { Props } from "./TextArea"

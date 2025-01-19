@@ -19,7 +19,7 @@ import React from "react"
 import { screen } from "@testing-library/react"
 
 import { render } from "~lib/test_util"
-import { Progress as ProgressProto } from "~lib/proto"
+import { Progress as ProgressProto } from "@streamlit/protobuf"
 
 import Progress, { ProgressProps } from "./Progress"
 

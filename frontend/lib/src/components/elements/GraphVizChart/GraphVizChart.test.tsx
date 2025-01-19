@@ -22,7 +22,7 @@ import { graphviz } from "d3-graphviz"
 
 import { logError } from "~lib/util/log"
 import { render } from "~lib/test_util"
-import { GraphVizChart as GraphVizChartProto } from "~lib/proto"
+import { GraphVizChart as GraphVizChartProto } from "@streamlit/protobuf"
 
 import GraphVizChart, { GraphVizChartProps } from "./GraphVizChart"
 

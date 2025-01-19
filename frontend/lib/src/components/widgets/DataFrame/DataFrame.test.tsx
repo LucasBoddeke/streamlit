@@ -22,7 +22,7 @@ import * as glideDataGridModule from "@glideapps/glide-data-grid"
 import { TEN_BY_TEN } from "~lib/mocks/arrow"
 import { render } from "~lib/test_util"
 import { Quiver } from "~lib/dataframes/Quiver"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 
 vi.mock("@glideapps/glide-data-grid", async () => ({
   ...(await vi.importActual("@glideapps/glide-data-grid")),

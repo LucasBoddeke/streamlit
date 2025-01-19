@@ -25,7 +25,7 @@ import {
   render,
   renderHook,
 } from "~lib/components/shared/ElementFullscreen/testUtils"
-import { DeckGlJsonChart as DeckGlJsonChartProto } from "~lib/proto"
+import { DeckGlJsonChart as DeckGlJsonChartProto } from "@streamlit/protobuf"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
 import { mockTheme } from "~lib/mocks/mockTheme"
 import { ElementFullscreenContext } from "~lib/components/shared/ElementFullscreen/ElementFullscreenContext"

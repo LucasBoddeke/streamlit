@@ -20,7 +20,7 @@ import { Field, Utf8 } from "apache-arrow"
 
 import { TextColumn } from "~lib/components/widgets/DataFrame/columns"
 import { DataFrameCellType } from "~lib/dataframes/arrowTypeUtils"
-import { Arrow as ArrowProto } from "~lib/proto"
+import { Arrow as ArrowProto } from "@streamlit/protobuf"
 
 import useSelectionHandler from "./useSelectionHandler"
 

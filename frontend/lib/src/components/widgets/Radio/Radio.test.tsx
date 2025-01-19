@@ -21,7 +21,7 @@ import { userEvent } from "@testing-library/user-event"
 
 import { render } from "~lib/test_util"
 import { WidgetStateManager } from "~lib/WidgetStateManager"
-import { Radio as RadioProto } from "~lib/proto"
+import { Radio as RadioProto } from "@streamlit/protobuf"
 
 import Radio, { Props } from "./Radio"
 
