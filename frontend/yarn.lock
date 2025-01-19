@@ -2548,6 +2548,7 @@ __metadata:
     "@emotion/react": "npm:^11.13.5"
     "@emotion/serialize": "npm:^1.1.3"
     "@emotion/styled": "npm:^11.13.5"
+    "@streamlit/connection": "workspace:^"
     "@streamlit/lib": "workspace:^"
     "@swc/plugin-emotion": "npm:^3.0.9"
     "@testing-library/jest-dom": "npm:^6.6.3"
@@ -2628,6 +2629,22 @@ __metadata:
     vitest: "npm:^2.1.4"
     vitest-canvas-mock: "npm:^0.3.3"
     vitest-websocket-mock: "npm:^0.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@streamlit/connection@workspace:^, @streamlit/connection@workspace:connection":
+  version: 0.0.0-use.local
+  resolution: "@streamlit/connection@workspace:connection"
+  dependencies:
+    "@streamlit/lib": "workspace:^"
+    "@streamlit/protobuf": "workspace:^"
+    axios: "npm:^1.7.9"
+    axios-mock-adapter: "npm:^1.21.2"
+    prettier: "npm:^2.8.3"
+    vite: "npm:^5.3.5"
+    vite-plugin-dts: "npm:^4.5.0"
+    vite-tsconfig-paths: "npm:^4.3.1"
+    vitest: "npm:^2.1.2"
   languageName: unknown
   linkType: soft
 

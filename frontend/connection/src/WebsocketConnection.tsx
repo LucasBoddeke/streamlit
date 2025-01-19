@@ -14,29 +14,20 @@
  * limitations under the License.
  */
 
-import styled from "@emotion/styled"
-
 import {
   LOG,
   PING_MAXIMUM_RETRY_PERIOD_MS,
   PING_MINIMUM_RETRY_PERIOD_MS,
   WEBSOCKET_STREAM_PATH,
   WEBSOCKET_TIMEOUT_MS,
-} from "@streamlit/app/src/connection/constants"
+} from "./constants"
+import { Event, OnConnectionStateChange, OnMessage, OnRetry } from "./types"
+import { BackMsg, ForwardMsg, IBackMsg } from "@streamlit/protobuf"
 import {
-  Event,
-  OnConnectionStateChange,
-  OnMessage,
-  OnRetry,
-} from "@streamlit/app/src/connection/types"
-import {
-  BackMsg,
   BaseUriParts,
   buildWsUri,
-  ForwardMsg,
   ForwardMsgCache,
   getCookie,
-  IBackMsg,
   IHostConfigResponse,
   isNullOrUndefined,
   logError,
@@ -47,8 +38,8 @@ import {
   SessionInfo,
   StreamlitEndpoints,
 } from "@streamlit/lib"
-import { ConnectionState } from "@streamlit/app/src/connection/ConnectionState"
-import { doInitPings } from "@streamlit/app/src/connection/DoInitPings"
+import { ConnectionState } from "./ConnectionState"
+import { doInitPings } from "./DoInitPings"
 
 export interface Args {
   /** The application's SessionInfo instance */
@@ -541,13 +532,3 @@ export class WebsocketConnection {
     }
   }
 }
-
-export const StyledBashCode = styled.code(({ theme }) => ({
-  fontFamily: theme.genericFonts.codeFont,
-  fontSize: theme.fontSizes.sm,
-  "&::before": {
-    content: '"$"',
-    // eslint-disable-next-line streamlit-custom/no-hardcoded-theme-values
-    marginRight: "1ex",
-  },
-}))

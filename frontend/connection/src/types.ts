@@ -20,7 +20,8 @@
  * Returns a promise with the index of the URI that worked.
  */
 
-import { ConnectionState } from "@streamlit/app/src/connection/ConnectionState"
+import type { ForwardMsg } from "@streamlit/protobuf"
+import { ConnectionState } from "./ConnectionState"
 
 export type OnMessage = (ForwardMsg: any) => void
 
@@ -29,9 +30,11 @@ export type OnConnectionStateChange = (
   errMsg?: string
 ) => void
 
+export type HttpStatusCode = number
+
 export type OnRetry = (
   totalTries: number,
-  errorNode: React.ReactNode,
+  errorNode: HttpStatusCode,
   retryTimeout: number
 ) => void
 

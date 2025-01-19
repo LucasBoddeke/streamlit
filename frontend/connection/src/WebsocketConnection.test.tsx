@@ -26,13 +26,10 @@ import {
   mockSessionInfoProps,
   SessionInfo,
 } from "@streamlit/lib"
-import { ConnectionState } from "@streamlit/app/src/connection/ConnectionState"
-import {
-  Args,
-  WebsocketConnection,
-} from "@streamlit/app/src/connection/WebsocketConnection"
-import { CORS_ERROR_MESSAGE_DOCUMENTATION_LINK } from "@streamlit/app/src/connection/constants"
-import { doInitPings } from "@streamlit/app/src/connection/DoInitPings"
+import { ConnectionState } from "./ConnectionState"
+import { Args, WebsocketConnection } from "./WebsocketConnection"
+import { CORS_ERROR_MESSAGE_DOCUMENTATION_LINK } from "./constants"
+import { doInitPings } from "./DoInitPings"
 
 const MOCK_ALLOWED_ORIGINS_CONFIG = {
   allowedOrigins: ["list", "of", "allowed", "origins"],

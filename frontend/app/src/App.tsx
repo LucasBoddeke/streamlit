@@ -115,11 +115,14 @@ import {
   DialogType,
   StreamlitDialog,
 } from "@streamlit/app/src/components/StreamlitDialog"
-import { ConnectionManager } from "@streamlit/app/src/connection/ConnectionManager"
-import { ConnectionState } from "@streamlit/app/src/connection/ConnectionState"
+import {
+  ConnectionManager,
+  ConnectionState,
+  DefaultStreamlitEndpoints,
+  HTTPStatusCode,
+} from "@streamlit/connection"
 import { SessionEventDispatcher } from "@streamlit/app/src/SessionEventDispatcher"
 import { UserSettings } from "@streamlit/app/src/components/StreamlitDialog/UserSettings"
-import { DefaultStreamlitEndpoints } from "@streamlit/app/src/connection/DefaultStreamlitEndpoints"
 import { MetricsManager } from "@streamlit/app/src/MetricsManager"
 import { StyledApp } from "@streamlit/app/src/styled-components"
 import withScreencast, {
@@ -1652,7 +1655,18 @@ export class App extends PureComponent<Props, State> {
   /**
    * Updates the app body when there's a connection error.
    */
-  handleConnectionError = (errNode: ReactNode): void => {
+  handleConnectionError = (httpStatusCode: HttpStatusCode): void => {
+    let errNode: ReactNode = ""
+    switch (httpStatusCode) {
+      case 408:
+        errNode = "404 Not Found"
+        break
+      case 403:
+        errNode = "500 Internal Server Error"
+        break
+      default:
+        errNode = "Connection error"
+    }
     this.showError("Connection error", errNode)
   }
 

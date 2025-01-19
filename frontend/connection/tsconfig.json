@@ -1,0 +1,13 @@
+{
+  "extends": "@streamlit/typescript-config/base.tsconfig.json",
+  "compilerOptions": {
+    "checkJs": false,
+    "baseUrl": ".",
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*"]
+}

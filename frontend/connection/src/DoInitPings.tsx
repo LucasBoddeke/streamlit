@@ -20,25 +20,21 @@
  * Returns a promise with the index of the URI that worked.
  */
 
-import React, { Fragment } from "react"
-
 import axios from "axios"
 
 import {
-  CORS_ERROR_MESSAGE_DOCUMENTATION_LINK,
   HOST_CONFIG_PATH,
   LOG,
   PING_TIMEOUT_MS,
   SERVER_PING_PATH,
-} from "@streamlit/app/src/connection/constants"
-import { OnRetry } from "@streamlit/app/src/connection/types"
+} from "./constants"
+import { HttpStatusCode, OnRetry } from "./types"
 import {
   BaseUriParts,
   buildHttpUri,
   IHostConfigResponse,
   logMessage,
   Resolver,
-  StreamlitMarkdown,
 } from "@streamlit/lib"
 
 export function doInitPings(
@@ -64,7 +60,7 @@ export function doInitPings(
     connect()
   }
 
-  const retry = (errorNode: React.ReactNode): void => {
+  const retry = (httpStatusCode: HttpStatusCode): void => {
     // Adjust retry time by +- 20% to spread out load
     const jitter = Math.random() * 0.4 - 0.2
     // Exponential backoff to reduce load from health pings when experiencing
@@ -75,40 +71,9 @@ export function doInitPings(
         : minimumTimeoutMs * 2 ** (totalTries - 1) * (1 + jitter)
     const retryTimeout = Math.min(maximumTimeoutMs, timeoutMs)
 
-    retryCallback(totalTries, errorNode, retryTimeout)
+    retryCallback(totalTries, httpStatusCode, retryTimeout)
 
     window.setTimeout(retryImmediately, retryTimeout)
-  }
-
-  const retryWhenTheresNoResponse = (): void => {
-    const uriParts = uriPartsList[uriNumber]
-    const uri = new URL(buildHttpUri(uriParts, ""))
-
-    if (uri.hostname === "localhost") {
-      const markdownMessage = `
-Is Streamlit still running? If you accidentally stopped Streamlit, just restart it in your terminal:
-
-\`\`\`bash
-streamlit run yourscript.py
-\`\`\`
-      `
-      retry(<StreamlitMarkdown source={markdownMessage} allowHTML={false} />)
-    } else {
-      retry("Connection failed with status 0.")
-    }
-  }
-
-  const retryWhenIsForbidden = (): void => {
-    retry(
-      <Fragment>
-        <p>Cannot connect to Streamlit (HTTP status: 403).</p>
-        <p>
-          If you are trying to access a Streamlit app running on another
-          server, this could be due to the app's{" "}
-          <a href={CORS_ERROR_MESSAGE_DOCUMENTATION_LINK}>CORS</a> settings.
-        </p>
-      </Fragment>
-    )
   }
 
   connect = () => {
@@ -139,34 +104,17 @@ streamlit run yourscript.py
       })
       .catch(error => {
         if (error.code === "ECONNABORTED") {
-          return retry("Connection timed out.")
+          return retry(408)
         }
 
         if (error.response) {
           // The request was made and the server responded with a status code
           // that falls out of the range of 2xx
 
-          const { data, status } = error.response
-
-          if (status === /* NO RESPONSE */ 0) {
-            return retryWhenTheresNoResponse()
-          }
-          if (status === 403) {
-            return retryWhenIsForbidden()
-          }
-          return retry(
-            `Connection failed with status ${status}, ` +
-              `and response "${data}".`
-          )
+          const { status } = error.response
+          return retry(status)
         }
-        if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-          // http.ClientRequest in node.js
-          return retryWhenTheresNoResponse()
-        }
-        // Something happened in setting up the request that triggered an Error
-        return retry(error.message)
+        return retry(0)
       })
   }
 

@@ -15,13 +15,6 @@
  */
 
 /**
- * If the ping retrieves a 403 status code a message will be displayed.
- * This constant is the link to the documentation.
- */
-export const CORS_ERROR_MESSAGE_DOCUMENTATION_LINK =
-  "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
-
-/**
  * Name of the logger.
  */
 export const LOG = "WebsocketConnection"
