@@ -34,6 +34,7 @@ import {
   PageConfig,
   StreamlitEndpoints,
 } from "@streamlit/lib"
+import { shouldCollapse } from "@streamlit/app/src/components/Sidebar/utils"
 
 import {
   RESIZE_HANDLE_WIDTH,
