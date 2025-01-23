@@ -14,7 +14,13 @@
  * limitations under the License.
  */
 
-import React, { ReactElement, useEffect, useRef, useState } from "react"
+import React, {
+  ReactElement,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
 
 import { ChevronLeft, ChevronRight } from "@emotion-icons/material-outlined"
 import { withTheme } from "@emotion/react"
@@ -126,6 +132,14 @@ const Sidebar: React.FC<SidebarProps> = ({
   const [showSidebarCollapse, setShowSidebarCollapse] =
     useState<boolean>(false)
 
+  const onMouseOver = useCallback(() => {
+    setShowSidebarCollapse(true)
+  }, [])
+
+  const onMouseOut = useCallback(() => {
+    setShowSidebarCollapse(false)
+  }, [])
+
   useEffect(() => {
     const checkMobileOnResize = (): boolean => {
       if (!window) return false
@@ -191,9 +205,9 @@ const Sidebar: React.FC<SidebarProps> = ({
     }
   }
 
-  function toggleCollapse(): void {
+  const toggleCollapse = useCallback(() => {
     setCollapsedSidebar(!collapsedSidebar)
-  }
+  }, [collapsedSidebar])
 
   function renderLogo(collapsed: boolean): ReactElement {
     if (!appLogo) {
@@ -291,8 +305,8 @@ const Sidebar: React.FC<SidebarProps> = ({
         <StyledSidebarContent
           data-testid="stSidebarContent"
           ref={sidebarRef}
-          onMouseOver={() => setShowSidebarCollapse(true)}
-          onMouseOut={() => setShowSidebarCollapse(false)}
+          onMouseOver={onMouseOver}
+          onMouseOut={onMouseOut}
         >
           <StyledSidebarHeaderContainer data-testid="stSidebarHeader">
             {renderLogo(false)}
