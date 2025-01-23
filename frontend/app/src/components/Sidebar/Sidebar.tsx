@@ -54,7 +54,7 @@ import SidebarNav from "./SidebarNav"
 export interface SidebarProps {
   endpoints: StreamlitEndpoints
   chevronDownshift: number
-  children?: React.ReactElement
+  children?: ReactElement
   initialSidebarState?: PageConfig.SidebarState
   theme: EmotionTheme
   hasElements: boolean
@@ -104,7 +104,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     cachedSidebarWidth || MIN_WIDTH
   )
   const [lastInnerWidth, setLastInnerWidth] = useState<number>(
-    window.innerWidth
+    window ? window.innerWidth : Infinity
   )
 
   // When hovering sidebar header
@@ -198,7 +198,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     setCollapsedSidebar(!collapsedSidebar)
   }
 
-  function renderLogo(collapsed: boolean): React.ReactElement {
+  function renderLogo(collapsed: boolean): ReactElement {
     if (!appLogo) {
       return <StyledNoLogoSpacer data-testid="stLogoSpacer" />
     }
