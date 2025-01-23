@@ -154,7 +154,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     setCollapsedSidebar(
       shouldCollapse(initialSidebarState, mediumBreakpointPx)
     )
-  }, [initialSidebarState, hasElements, mediumBreakpointPx])
+  }, [initialSidebarState, mediumBreakpointPx])
 
   function shouldCollapse(
     initialSidebarState: PageConfig.SidebarState | undefined,
