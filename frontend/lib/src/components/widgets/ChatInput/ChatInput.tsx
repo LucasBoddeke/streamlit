@@ -60,6 +60,8 @@ import {
   UploadFileInfo,
 } from "~lib/components/widgets/FileUploader/UploadFileInfo"
 import { FileUploadClient } from "~lib/FileUploadClient"
+import TooltipIcon from "~lib/components/shared/TooltipIcon"
+import { Placement } from "~lib/components/shared/Tooltip"
 
 import {
   StyledChatInput,
@@ -261,13 +263,18 @@ const FileUploadArea = ({
     <>
       <div data-testid="stChatInputFileUploadButton" {...getRootProps()}>
         <input {...getInputProps()} />
-        <BaseButton kind={BaseButtonKind.MINIMAL} disabled={disabled}>
-          <Icon
-            content={AttachFile}
-            size="lg"
-            color={theme.colors.fadedText60}
-          />
-        </BaseButton>
+        <TooltipIcon
+          content="Upload or drag and drop a file"
+          placement={Placement.TOP}
+        >
+          <BaseButton kind={BaseButtonKind.MINIMAL} disabled={disabled}>
+            <Icon
+              content={AttachFile}
+              size="lg"
+              color={theme.colors.fadedText60}
+            />
+          </BaseButton>
+        </TooltipIcon>
       </div>
       <StyledVerticalDivider />
     </>
