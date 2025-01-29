@@ -1,0 +1,113 @@
+import streamlit as st
+import re
+
+def analyze_text(text):
+    scores = {}
+    text_lower = text.lower()
+    
+    # 1. Horizonbepaling (Langetermijnperspectief)
+    time_matches = re.findall(r'\b(\d+)\s*(jaar|jaren)\b', text)
+    years = [int(match[0]) for match in time_matches if int(match[0]) > 0]
+    max_year = max(years) if years else 0
+    
+    if max_year >= 50:
+        scores['Horizonbepaling'] = 'A'
+    elif max_year >= 25:
+        scores['Horizonbepaling'] = 'B'
+    elif max_year >= 10:
+        scores['Horizonbepaling'] = 'C'
+    elif max_year >= 5:
+        scores['Horizonbepaling'] = 'D'
+    else:
+        scores['Horizonbepaling'] = 'E'
+
+    # 2. Innovatiebereidheid
+    innovation_keywords = ['innovati', 'experiment', 'pilot', 'nieuw', 'technologie', 'doorbraak']
+    innovation_count = sum(text_lower.count(keyword) for keyword in innovation_keywords)
+    scores['Innovatiebereidheid'] = 'A' if innovation_count >=4 else 'B' if innovation_count >=2 else 'C' if innovation_count >=1 else 'E'
+
+    # 3. Wendbaarheid en adaptiviteit
+    flexibility_keywords = ['flexibel', 'aanpass', 'monitor', 'evalua', 'feedback', 'agile', 'wendbaar']
+    flexibility_count = sum(text_lower.count(keyword) for keyword in flexibility_keywords)
+    scores['Wendbaarheid en adaptiviteit'] = 'A' if flexibility_count >=3 else 'B' if flexibility_count >=2 else 'D'
+
+    # 4. Stakeholderbetrokkenheid
+    stakeholder_keywords = ['jongeren', 'toekomstige generaties', 'minderheden', 'stakeholder', 'inbreng', 'participatie']
+    stakeholder_count = sum(text_lower.count(keyword) for keyword in stakeholder_keywords)
+    scores['Stakeholderbetrokkenheid'] = 'A' if stakeholder_count >=3 else 'B' if stakeholder_count >=1 else 'E'
+
+    # 5. Duurzaamheid en inclusiviteit
+    sustainability_keywords = ['duurzaam', 'inclusi', 'klimaat', 'circulair', 'sociaal', 'diversiteit']
+    sustainability_count = sum(text_lower.count(keyword) for keyword in sustainability_keywords)
+    scores['Duurzaamheid en inclusiviteit'] = 'A' if sustainability_count >=4 else 'B' if sustainability_count >=2 else 'E'
+
+    # 6. Toekomstscenario's
+    scenario_keywords = ['scenario', 'onzekerheid', 'visie', 'strategi', 'toekomstbeeld', 'raming']
+    scenario_count = sum(text_lower.count(keyword) for keyword in scenario_keywords)
+    scores["Toekomstscenario's en strategische visie"] = 'A' if scenario_count >=3 else 'B' if scenario_count >=1 else 'E'
+
+    return scores
+
+REFLECTIEVRAGEN = {
+    "Horizonbepaling": [
+        "Hoe zou dit beleid eruitzien over 50 jaar?",
+        "Welke trends zouden invloed kunnen hebben op uw doelen?"
+    ],
+    "Innovatiebereidheid": [
+        "Welke innovatieve ideeën zouden u kunnen helpen?",
+        "Hoe zou u experimenteren met nieuwe benaderingen?"
+    ],
+    "Wendbaarheid en adaptiviteit": [
+        "Hoe snel zou u kunnen reageren op veranderingen?",
+        "Welke strategieën zou u kunnen inzetten om flexibel te blijven?"
+    ],
+    "Stakeholderbetrokkenheid": [
+        "Hoe zou u jongeren of minderheden meer betrekken?",
+        "Welke waarde kan brede input toevoegen aan uw beleid?"
+    ],
+    "Duurzaamheid en inclusiviteit": [
+        "Hoe kan uw beleid bijdragen aan een duurzame toekomst?",
+        "Welke groepen hebben de meeste baat bij inclusiviteit?"
+    ],
+    "Toekomstscenario's en strategische visie": [
+        "Welke scenario’s zou u kunnen ontwikkelen voor de toekomst?",
+        "Hoe kunt u uw strategie robuuster maken?"
+    ]
+}
+
+st.set_page_config(page_title="Futri-Bot", layout="wide")
+
+# Voeg chatbot-afbeelding toe
+st.image("/mnt/data/openart-image_CV5330S3_1738062635145_raw.jpg", caption="Futri-Bot", use_column_width=True)
+
+if 'page' not in st.session_state:
+    st.session_state.page = 1
+if 'scores' not in st.session_state:
+    st.session_state.scores = {}
+
+if st.session_state.page == 1:
+    st.title("🏭 Futri-Bot - Toekomstanalyse")
+    input_text = st.text_area("**Beschrijf uw plannen of strategie:**", height=300, 
+                            placeholder="Bijvoorbeeld: 'Onze doelstelling is klimaatneutraliteit in 2050 door innovatieve technologieën...'")
+    
+    if st.button("📊 Analyseer toekomstgerichtheid"):
+        if input_text.strip():
+            st.session_state.scores = analyze_text(input_text)
+            st.session_state.page = 2
+            st.rerun()
+        else:
+            st.error("Voer eerst een tekst in om te analyseren")
+
+elif st.session_state.page == 2:
+    st.title("📈 Analyse Resultaten")
+    
+    for criterion in st.session_state.scores:
+        score = st.session_state.scores[criterion]
+        with st.expander(f"{criterion} - Score: {score}", expanded=True):
+            st.subheader("Reflectievragen")
+            for vraag in REFLECTIEVRAGEN[criterion]:
+                st.write(f"- {vraag}")
+    
+    if st.button("🔄 Nieuwe analyse"):
+        st.session_state.page = 1
+        st.rerun()
