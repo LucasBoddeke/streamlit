@@ -242,6 +242,7 @@ const ROUNDING_OFFSET = 1
 interface FileUploadAreaProps {
   getRootProps: any
   getInputProps: any
+  acceptFile: AcceptFileValue
   showDropzone: boolean
   disabled: boolean
   theme: EmotionTheme
@@ -251,6 +252,7 @@ const FileUploadArea = ({
   getRootProps,
   getInputProps,
   showDropzone,
+  acceptFile,
   disabled,
   theme,
 }: FileUploadAreaProps): React.ReactElement =>
@@ -264,7 +266,9 @@ const FileUploadArea = ({
       <div data-testid="stChatInputFileUploadButton" {...getRootProps()}>
         <input {...getInputProps()} />
         <TooltipIcon
-          content="Upload or drag and drop a file"
+          content={`Upload or drag and drop ${
+            acceptFile === AcceptFileValue.Multiple ? "files" : "a file"
+          }`}
           placement={Placement.TOP}
         >
           <BaseButton kind={BaseButtonKind.MINIMAL} disabled={disabled}>
@@ -595,6 +599,7 @@ function ChatInput({
       : false
 
   const showDropzone = acceptFile !== AcceptFileValue.None && fileDragged
+  const containerClass = "stChatInput"
 
   return (
     <>
@@ -602,7 +607,9 @@ function ChatInput({
         <ChatUploadedFiles items={[...files]} onDelete={deleteFile} />
       )}
       <StyledChatInputContainer
-        className={showDropzone ? "stChatInput dropzone" : "stChatInput"}
+        className={
+          showDropzone ? `${containerClass} dropzone` : containerClass
+        }
         data-testid="stChatInput"
         width={width}
       >
@@ -611,6 +618,7 @@ function ChatInput({
             <FileUploadArea
               getRootProps={getRootProps}
               getInputProps={getInputProps}
+              acceptFile={acceptFile}
               showDropzone={showDropzone}
               disabled={disabled}
               theme={theme}
